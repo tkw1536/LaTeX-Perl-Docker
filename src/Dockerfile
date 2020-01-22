@@ -1,8 +1,8 @@
 ## Dockerfile for Building TeXLive distribution image with a specific version of perl
 FROM ubuntu:xenial
 
-ARG PERL "5.30.1"
-ARG TEXLIVE "2019"
+ARG PERL="5.30.1"
+ARG TEXLIVE="2019"
 
 # Install packages required by perlbrew and LaTeXML
 RUN apt-get update && \
