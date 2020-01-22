@@ -1,5 +1,5 @@
 language: generic
-sudo: required
+os: linux
 dist: trusty
 
 services:
@@ -16,4 +16,4 @@ env:
 # Run the docker test image
 script:
   - cd src
-  - docker build --build-arg PERL=$PERL --build-arg TEXTLIVE=$TEXLIVE -t tkw1536/texlive-perl:$PERL_$TEXLIVE .
+  - docker build --build-arg PERL=$PERL --build-arg TEXLIVE=$TEXLIVE -t tkw1536/texlive-perl:$PERL_$TEXLIVE .
