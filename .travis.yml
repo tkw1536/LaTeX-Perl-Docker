@@ -1,0 +1,19 @@
+language: generic
+sudo: required
+dist: trusty
+
+services:
+  - docker
+
+# Build all the docker images
+env:
+  - PERL=5.30.0 TEXLIVE=2019
+  - PERL=5.28.0 TEXLIVE=2018
+  - PERL=5.26.2 TEXLIVE=2017
+  - PERL=5.26.2 TEXLIVE=2016
+  - PERL=5.22.4 TEXLIVE=2015
+
+# Run the docker test image
+script:
+  - cd src
+  - docker build --build-arg PERL=$PERL --build-arg TEXTLIVE=$TEXLIVE -t tkw1536/texlive-perl:$PERL_$TEXLIVE .
